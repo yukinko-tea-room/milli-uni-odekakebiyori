@@ -1,6 +1,6 @@
 package model
 
-// Card
+// Card だよ
 type Card struct {
 	cardID int
 	idolID int
@@ -19,4 +19,17 @@ func CardList() []*Card {
 		list = append(list, card)
 	}
 	return list
+}
+
+// Cards は複数カードの操作を扱います
+type Cards []*Card
+
+// FindByIdolID はidolIDが一致するカードを1枚返します
+func (c Cards) FindByIdolID(idolID int) *Card {
+	for _, card := range c {
+		if card.idolID == idolID {
+			return card
+		}
+	}
+	return nil
 }

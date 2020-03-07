@@ -8,8 +8,14 @@ import (
 func main() {
 	fmt.Println("Hello,world")
 
-	deck := model.NewDeck()
+	game := model.NewGame()
 
-	fmt.Println(deck.List())
-	fmt.Println(deck.Draw())
+	fmt.Println(game.Draw(10))
+	fmt.Println(game.PlayerJoin(10))
+	fmt.Println(game.Draw(10))
+	fmt.Println(game.SetCurrentPlayer(10))
+	fmt.Println(game.Draw(10))
+	fmt.Println(game.Stage(10, 1, false))
+	fmt.Println(game.Stage(10, 0, false))
+
 }

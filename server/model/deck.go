@@ -7,6 +7,7 @@ var (
 	ErrDeckEmpty = errors.New("error: deck empty")
 )
 
+// Deck だよ
 type Deck struct {
 	deck []*Card
 }
@@ -19,12 +20,12 @@ func NewDeck() *Deck {
 	}
 }
 
-// List
+// List だよ
 func (d *Deck) List() []*Card {
 	return d.deck
 }
 
-// Draw
+// Draw だよ
 func (d *Deck) Draw() (*Card, int, error) {
 	if len(d.deck) <= 0 {
 		return nil, 0, ErrDeckEmpty
